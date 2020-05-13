@@ -1,4 +1,6 @@
-# ejemplo2
+# Ejemplo con VueJS
+
+Ejemplo de conexión a API con Axios, usando bootstrap y VueJS
 
 ## Project setup
 ```
