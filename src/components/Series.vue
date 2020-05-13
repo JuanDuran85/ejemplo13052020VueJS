@@ -8,7 +8,7 @@
           <div class="card-body">
             <h5 class="card-title">{{serie.name | mayusculas }}</h5>
             <p class="card-text text-justify" v-html="$options.filters.recorte(serie.summary)"></p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary" data-toggle="modal" :data-target="'#ventana'+index">
             Var más
             </button>
           </div>
@@ -29,7 +29,6 @@ export default {
   },
   filters: {
     mayusculas(texto){
-      console.log(texto)
       return texto.toUpperCase();
     },
     recorte(texto){

@@ -2,7 +2,7 @@
   <div class="container">
     <h1>Muestra de Series</h1>
     <series :informacion="series"></series>
-    <modal v-for="(item, index) in series" :key="index" :imagen="item.image.medium" :descrip="item.summary" :nombre="item.name"></modal>
+    <modal v-for="(item, index) in series" :key="index" :imagen="item.image.medium" :descrip="item.summary" :nombre="item.name" :index="index"></modal>
   </div>
 </template>
 
