@@ -8,24 +8,34 @@
           <div class="card-body">
             <h5 class="card-title">{{serie.name | mayusculas }}</h5>
             <p class="card-text text-justify" v-html="$options.filters.recorte(serie.summary)"></p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#staticBackdrop">
+            <button type="button" class="btn btn-primary" data-toggle="modal" :data-target="'#id' + index" @click="eventos"
+            
+            >
             Var más
             </button>
           </div>
         </div>
+        <modal :key="index" :id="'id'+index" :imagen="serie.image.medium" :descrip="serie.summary" :nombre="serie.name"></modal>
       </div>
     </div>
+    
   </div>
 </template>
 
 <script>
+import Modal from './Modal.vue';
+
 export default {
   name: 'Series',
   props: { 
     informacion: {
       type: Array,
       required: true,
+      datatarget: 'data-target'
     } 
+  },
+  components: {
+    Modal
   },
   filters: {
     mayusculas(texto){
@@ -34,6 +44,12 @@ export default {
     },
     recorte(texto){
       return texto.substring(0,100)+'...';
+    }
+  },
+
+  methods: {
+    eventos () {
+      console.log(this)
     }
   }
 }
