@@ -1,7 +1,7 @@
 <template>
   <div>
     <!-- Modal -->
-    <div class="modal fade" id="staticBackdrop" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal fade" :id="id" data-backdrop="static" data-keyboard="false" tabindex="-1" role="dialog" aria-labelledby="staticBackdropLabel" aria-hidden="true">
     <div class="modal-dialog modal-dialog-scrollable">
         <div class="modal-content">
         <div class="modal-header">
@@ -28,7 +28,7 @@
 
 <script>
 export default {
-    props: ['imagen','descrip','nombre']
+    props: ['imagen','descrip','nombre', 'id']
 }
 </script>
 
