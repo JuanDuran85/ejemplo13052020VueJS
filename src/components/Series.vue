@@ -8,7 +8,7 @@
           <div class="card-body">
             <h5 class="card-title">{{serie.name | mayusculas }}</h5>
             <p class="card-text text-justify" v-html="$options.filters.recorte(serie.summary)"></p>
-            <button type="button" class="btn btn-primary" data-toggle="modal" :data-target="'#ventana'+index">
+            <button type="button" class="btn btn-primary boton1" :class="{ boton2: activo }" data-toggle="modal" :data-target="'#ventana'+index">
             Var más
             </button>
           </div>
@@ -21,6 +21,11 @@
 <script>
 export default {
   name: 'Series',
+  data() {
+    return {
+      activo: false
+    }
+  },
   props: { 
     informacion: {
       type: Array,
@@ -39,5 +44,11 @@ export default {
 </script>
 
 <style scoped>
-
+.boton1:hover{
+  background-color: crimson;
+}
+.boton2 {
+  background-color: chartreuse;
+  font-size: 24px;
+}
 </style>
