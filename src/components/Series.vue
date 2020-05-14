@@ -13,12 +13,16 @@
             </button>
           </div>
         </div>
+        <modal :key="index" :id="'id'+index" :imagen="serie.image.medium" :descrip="serie.summary" :nombre="serie.name"></modal>
       </div>
     </div>
+    
   </div>
 </template>
 
 <script>
+import Modal from './Modal.vue';
+
 export default {
   name: 'Series',
   data() {
@@ -30,7 +34,11 @@ export default {
     informacion: {
       type: Array,
       required: true,
+      datatarget: 'data-target'
     } 
+  },
+  components: {
+    Modal
   },
   filters: {
     mayusculas(texto){
@@ -38,6 +46,12 @@ export default {
     },
     recorte(texto){
       return texto.substring(0,100)+'...';
+    }
+  },
+
+  methods: {
+    eventos () {
+      console.log(this)
     }
   }
 }
